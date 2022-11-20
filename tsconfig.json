@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitThis": true,
+    "module": "esnext",
+    "target": "es2018",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "exactOptionalPropertyTypes":false,
+    "jsx": "react",
+    "lib": ["es2017", "dom"]
+  }
+}
