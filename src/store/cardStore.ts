@@ -1,22 +1,19 @@
 
 import create from 'zustand';
-import { demoCards, SingleCard } from '../types/card'
+import { CardState } from '../types/card'
+import { allJokes, createJoke } from './jokes';
 
-const day = 1;
-const daysLeft = 24 - day;
-const daysToChristmas: SingleCard = [{ text: daysLeft.toString(), size: "big" }, { text: "päivää jouluun!" }]
-
-type CardState = {
-  cardsOfTheDay: SingleCard[],
-  visibleCardIndex: number,
-  nextCard: () => void
-}
+const today = "1";
 
 export const useCardStore = create<CardState>()((set) => ({
-  cardsOfTheDay: [...demoCards[day], daysToChristmas],
+  cardsOfTheDay: createJoke(today),
   visibleCardIndex: 0,
+  cards: allJokes ?? [],
   nextCard: () => set(
-    (state) => ({ visibleCardIndex: (state.visibleCardIndex < state.cardsOfTheDay.length - 1) ? state.visibleCardIndex + 1 : state.visibleCardIndex }
-    ))
+    (state) => ({ visibleCardIndex: 
+      (state.visibleCardIndex < state.cardsOfTheDay.length - 1) ? state.visibleCardIndex + 1 : state.visibleCardIndex }
+    )),
+    anotherJoke: (index: string) => set(
+      (state) => ({ cardsOfTheDay: createJoke(index), visibleCardIndex: 0 }))
 }))
 

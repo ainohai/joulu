@@ -2,8 +2,8 @@ import * as React from "react"
 import { useCardStore } from "../store/cardStore";
 import { SingleCard } from "../types/card";
 
-type CardProps = { 
-    card: SingleCard, 
+type CardProps = {
+    card: SingleCard,
     index: number,
     totalNumOfCards: number
 };
@@ -12,25 +12,20 @@ const Card = (props: CardProps) => {
 
     const { card, index, totalNumOfCards } = props;
     const { visibleCardIndex, nextCard } = useCardStore()
-    
+
     return (
         <article
-            className="fadeCart"
-            style={{ boxShadow: "none", 
-            display: index === visibleCardIndex ? "flex" : "none", 
-            alignItems: "center", 
-            minWidth: "500px", 
-            minHeight:"300px", 
-            cursor: index < totalNumOfCards -1 ? "pointer" : "default",
-            flexDirection: "column", 
-            animation: "fadeIn 2.5s",
-            justifyContent: "space-around" }}
+            style={{
+                display: index === visibleCardIndex ? "flex" : "none",
+                cursor: index < totalNumOfCards - 1 ? "pointer" : "default",
+            }}
+            className="cardContent"
             onClick={() => nextCard()}
         >
             {card.map((cardPart, index) =>
-                <p 
-                key={index} 
-                style={{ fontSize: cardPart.size === "big" ? "52px" : "1.2em" }}>
+                <p
+                    key={index}
+                    style={cardPart.size === "big" ? { fontSize: "52px" } : {}}>
                     {cardPart.text}
                 </p>
             )}
@@ -41,7 +36,7 @@ const Card = (props: CardProps) => {
 
 export default function Cards() {
 
-    const cards = useCardStore((state) => state.cardsOfTheDay)
+    const cards = useCardStore((state) => state.cardsOfTheDay);
 
     return (
         <main className="container">
