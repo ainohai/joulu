@@ -1,50 +1,13 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8" />
-    <title>Joulukortti</title>
-    <style>
-        body,
-        html,
-        canvas {
-            margin: 0;
-            padding: 0;
-            background-color: rgb(35, 38, 38);
-            width: 100%;
-            height: 100%;
-        }
+    <head>
+        <meta charset="utf-8" />
+        <title>Joulukalenteri</title>
+    </head>
 
-        #threejs-container {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .centeredCard {
-            display: flex;
-            height: 100%;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            z-index: 100;
-            top: 0;
-            margin-left: auto;
-            margin-right: auto;
-            left: 0;
-            right: 0;
-        }
-        @keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-    </style>
-</head>
-
-<body data-theme="dark">
-    <div id="user-controls"></div>
-    <div id="threejs-container"></div>
-</body>
+    <body data-theme="dark">
+        <div id="threejs-container"></div>
+    </body>
 
 </html>
