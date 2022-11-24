@@ -19,8 +19,7 @@ const NavLink = (props: NavProps) => {
 
 export default function TestNavigation() {
 
-    const jokes = useCardStore((state) => state.cards);
-    const days = Object.keys(jokes ?? {});
+    const days = useCardStore((state) => state.days);
 
     return (
         <div id="testNavigation">

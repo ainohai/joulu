@@ -12,7 +12,7 @@ export type CardsOfDayType = {
 export type CardState = {
     cardsOfTheDay: SingleCard[],
     visibleCardIndex: number,
-    cards: CardsOfDayType,
+    days: string[],
     nextCard: () => void,
     anotherJoke: (index: string) => void
   }

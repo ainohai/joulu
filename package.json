@@ -6,8 +6,7 @@
     "build": "webpack",
     "start": "webpack serve --open",
     "lint": "eslint",
-    "check": "tsc --noEmit",
-    "test": "jest"
+    "check": "tsc --noEmit"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -21,13 +20,10 @@
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "@types/three": "^0.146.0",
-    "babel-jest": "^27.5.1",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "html-webpack-tags-plugin": "^3.0.2",
-    "jest": "^27.5.1",
-    "msgpack-lite": "^0.1.26",
     "prettier": "^2.4.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
@@ -47,8 +43,5 @@
     "rxjs": "^7.5.7",
     "three": "^0.146.0",
     "zustand": "^4.1.4"
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
   }
 }
