@@ -5,8 +5,9 @@
     "watch": "webpack --watch",
     "build": "webpack",
     "start": "webpack serve --open",
-    "lint": "eslint",
-    "check": "tsc --noEmit"
+    "format": "yarn prettier --write .",
+    "check": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -24,7 +25,9 @@
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "html-webpack-tags-plugin": "^3.0.2",
-    "prettier": "^2.4.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.8.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
@@ -43,5 +46,8 @@
     "rxjs": "^7.5.7",
     "three": "^0.146.0",
     "zustand": "^4.1.4"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

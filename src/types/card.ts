@@ -1,18 +1,18 @@
 export type CardText = {
-    text: string;
-    size?: "big" | "normal"
-}
+  text: string;
+  size?: 'big' | 'normal';
+};
 
-export type SingleCard = CardText[]
+export type SingleCard = CardText[];
 
 export type CardsOfDayType = {
-    [day: number]: SingleCard[]
-}
+  [day: number]: SingleCard[];
+};
 
 export type CardState = {
-    cardsOfTheDay: SingleCard[],
-    visibleCardIndex: number,
-    days: string[],
-    nextCard: () => void,
-    anotherJoke: (index: string) => void
-  }
+  cardsOfTheDay: SingleCard[];
+  visibleCardIndex: number;
+  days: string[];
+  nextCard: () => void;
+  anotherJoke: (index: string) => void;
+};

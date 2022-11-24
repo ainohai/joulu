@@ -9,7 +9,7 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "isolatedModules": true,
-    "exactOptionalPropertyTypes":false,
+    "exactOptionalPropertyTypes": false,
     "jsx": "react",
     "lib": ["es2017", "dom"]
   }
