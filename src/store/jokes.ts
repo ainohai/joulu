@@ -15,4 +15,5 @@ export const allJokes: CardsOfDayType = {
     ],
 }
 
+export const getDays = (): string[] => Object.keys(allJokes ?? {});
 export const createJoke = (day: string): SingleCard[] => [calendarIntro(day), ...allJokes[day], daysToChristmas(day)];
