@@ -4,7 +4,6 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import * as React from 'react';
 import { random } from 'maath';
 import { Points, PointMaterial } from '@react-three/drei';
-import Stats from 'three/examples/jsm/libs/stats.module';
 
 function Stars(props) {
   const ref: React.MutableRefObject<THREE.Mesh> = useRef();
