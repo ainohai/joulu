@@ -18,4 +18,6 @@ export const useCardStore = create<CardState>()((set) => ({
     })),
   anotherJoke: (index: string) =>
     set((state) => ({ cardsOfTheDay: createJoke(index), visibleCardIndex: 0 })),
+  loading: true,
+  setLoading: (isLoading: boolean) => set((state) => ({ loading: isLoading })),
 }));
