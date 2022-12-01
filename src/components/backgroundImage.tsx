@@ -6,7 +6,10 @@ export function BackgroundImage() {
   const { setLoading } = useCardStore();
   return (
     <div className="joululanssi">
-      <img src={joululanssi} onLoad={() => setLoading(false)} />
+      <img
+        src={joululanssi}
+        onLoad={() => setTimeout(() => setLoading(false), 500)}
+      />
     </div>
   );
 }
