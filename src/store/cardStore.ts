@@ -1,11 +1,12 @@
 import create from 'zustand';
 import { CardState } from '../types/card';
 import { createJoke, getDays } from './jokes';
+import { showDay } from './utils';
 
-const today = '1';
+const today = showDay();
 
 export const useCardStore = create<CardState>()((set) => ({
-  cardsOfTheDay: createJoke(today),
+  cardsOfTheDay: createJoke(today.toString()),
   visibleCardIndex: 0,
   days: getDays(),
   nextCard: () =>

@@ -1,4 +1,5 @@
 import { CardsOfDayType, SingleCard } from '../types/card';
+import { showDay } from './utils';
 
 const daysLeft = (day: string) => 24 - Number.parseInt(day) || 0;
 const calendarIntro = (day: string): SingleCard => [
@@ -7,7 +8,10 @@ const calendarIntro = (day: string): SingleCard => [
 ];
 const daysToChristmas = (day: string): SingleCard => [
   { text: `${daysLeft(day)}`, size: 'big' },
-  { text: 'päivää jouluun!' },
+  { text: 'päivää jouluun.' },
+];
+const merryChristmas = (): SingleCard => [
+  { text: `Oivallista ${showDay() >= 22 ? 'joulua' : 'joulun odotusta'}!` },
 ];
 
 export const allJokes: CardsOfDayType = {
@@ -15,11 +19,11 @@ export const allJokes: CardsOfDayType = {
     [{ text: 'Miksi Harrison Fordilla ei ole perskarvoja?' }],
     [{ text: 'Hän on takaa-ajettu.' }],
   ],
-  2: [[{ text: 'Missä kissat asuvat?' }], [{ text: 'Kattilassa' }]],
-  3: [
+  2: [
     [{ text: 'Mitä eroa on vaaleilla ja tummilla kanoilla?' }],
     [{ text: 'Vaaleissa äänestetään.' }],
   ],
+  3: [[{ text: 'Missä kissat asuvat?' }], [{ text: 'Kattilassa' }]],
   4: [
     [{ text: 'Mitä eksoottinen hedelmä sanoi Uudenmaan rajalla?' }],
     [{ text: 'Passi on!' }],
@@ -124,4 +128,5 @@ export const createJoke = (day: string): SingleCard[] => [
   calendarIntro(day),
   ...allJokes[day],
   daysToChristmas(day),
+  merryChristmas(),
 ];
