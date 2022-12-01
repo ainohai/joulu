@@ -8,7 +8,7 @@ canvas {
 }
 
 body {
-  background-color: rgb(35, 38, 38);
+  background-color: #323337;
 }
 
 #threejs-container {
@@ -66,5 +66,23 @@ body {
     margin: 1em;
     list-style: none;
     cursor: pointer;
+  }
+}
+
+.joululanssi {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 2500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  img {
+    flex-shrink: 0;
+    min-width: 100%;
+    //min-height: 100%;
   }
 }
