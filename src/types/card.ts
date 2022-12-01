@@ -15,4 +15,6 @@ export type CardState = {
   days: string[];
   nextCard: () => void;
   anotherJoke: (index: string) => void;
+  loading: boolean;
+  setLoading: (isLoading: boolean) => void;
 };
