@@ -17,9 +17,6 @@ const Card = (props: CardProps) => {
       style={{
         display: index === visibleCardIndex ? 'flex' : 'none',
         cursor: index < totalNumOfCards - 1 ? 'pointer' : 'default',
-        position: 'relative',
-        fontFamily: 'Baskerville Old Face, Bookman Antiqua, Georgia, serif',
-        backgroundColor: 'rgba(15, 11, 7, 0.75)',
       }}
       className="cardContent"
       onClick={() => {
@@ -38,16 +35,8 @@ const Card = (props: CardProps) => {
       ))}
       {index >= totalNumOfCards - 1 && !isOld && (
         <a
-          style={{
-            position: 'absolute',
-            right: 0,
-            bottom: 0,
-            margin: '1rem',
-            fontSize: '0.75rem',
-            color: 'rgb(187, 198, 206)',
-          }}
+          className="oldJoke"
           onClick={() => {
-            console.log(setOld);
             setOld(true);
           }}
         >
