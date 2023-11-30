@@ -11,10 +11,13 @@ export type CardsOfDayType = {
 
 export type CardState = {
   cardsOfTheDay: SingleCard[];
+  oldJokeOfTheDay: SingleCard[];
   visibleCardIndex: number;
+  isOld: boolean;
   days: string[];
   nextCard: () => void;
   anotherJoke: (index: string) => void;
   loading: boolean;
   setLoading: (isLoading: boolean) => void;
+  setOld: (setOld: boolean) => void;
 };
