@@ -98,11 +98,10 @@ article {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  animation: fadeIn 5s;
 
   img {
     flex-shrink: 0;
     min-width: 100%;
-    //min-height: 100%;
-    animation: fadeIn 5s;
   }
 }
