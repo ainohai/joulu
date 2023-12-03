@@ -249,6 +249,8 @@ export const createJoke = (day: string): SingleCard[] => [
   calendarIntro(day),
   ...allJokes[day],
   daysToChristmas(day),
+];
+export const createOldJoke = (day: string): SingleCard[] => [
+  ...oldJokes[day],
   merryChristmas(),
 ];
-export const createOldJoke = (day: string): SingleCard[] => [...oldJokes[day]];

@@ -40,7 +40,7 @@ const Card = (props: CardProps) => {
             setOld(true);
           }}
         >
-          Tahdon vanhemman vitsin.
+          Tahdon vanhemman vitsin (2022).
         </a>
       )}
     </article>

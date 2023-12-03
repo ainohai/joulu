@@ -1,9 +1,13 @@
 import create from 'zustand';
-import { CardState } from '../types/card';
+import { CardState, SingleCard } from '../types/card';
 import { createJoke, createOldJoke, getDays } from './jokes';
 import { showDay } from './utils';
 
 const today = showDay();
+const getCorrectCards = (state: CardState) =>
+  state.isOld ? state.oldJokeOfTheDay : state.cardsOfTheDay;
+const anyCardsLeft = (visibleCardIndex: number, cards: SingleCard[]) =>
+  visibleCardIndex < cards.length - 1;
 
 export const useCardStore = create<CardState>()((set) => ({
   oldJokeOfTheDay: createOldJoke(today.toString()),
@@ -13,13 +17,12 @@ export const useCardStore = create<CardState>()((set) => ({
   days: getDays(),
   nextCard: () =>
     set((state) => ({
-      visibleCardIndex:
-        state.visibleCardIndex <
-        (state.isOld
-          ? state.oldJokeOfTheDay.length - 1
-          : state.cardsOfTheDay.length - 1)
-          ? state.visibleCardIndex + 1
-          : state.visibleCardIndex,
+      visibleCardIndex: anyCardsLeft(
+        state.visibleCardIndex,
+        getCorrectCards(state)
+      )
+        ? state.visibleCardIndex + 1
+        : state.visibleCardIndex,
     })),
   anotherJoke: (index: string) =>
     set((state) => ({
@@ -31,7 +34,6 @@ export const useCardStore = create<CardState>()((set) => ({
   loading: true,
   setLoading: (isLoading: boolean) => set((state) => ({ loading: isLoading })),
   setOld: (isOld: boolean) => {
-    console.log('setting');
     set((state) => ({ isOld: isOld, visibleCardIndex: 0 }));
   },
 }));
