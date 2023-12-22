@@ -116,6 +116,12 @@ export const allJokes: CardsOfDayType = {
   22: [
     [{ text: 'Mikä on äärioikeistolaisten humalatila?' }],
     [{ text: 'PeruSkänni.' }],
+    [
+      {
+        text: 'Bonus: Miksi (f1-kuski) Heikki ei osallistunut Oivan dailyihin',
+      },
+    ],
+    [{ text: 'Heikki on Kovalainen' }],
   ],
   23: [
     [{ text: 'Naisystäväni pyysi minua hemmottelemaan häntä.' }],
