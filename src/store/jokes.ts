@@ -1,9 +1,10 @@
 import { CardsOfDayType, SingleCard } from '../types/card';
 import { showDay } from './utils';
 
-const daysLeft = (day: string) => 24 - Number.parseInt(day) || 0;
+const getDay = (day: string): string => (Number(day) >= 24 ? '24' : day);
+const daysLeft = (day: string) => 24 - Number.parseInt(getDay(day)) || 0;
 const calendarIntro = (day: string): SingleCard => [
-  { text: `${day}.`, size: 'big' },
+  { text: `${getDay(day)}.`, size: 'big' },
   { text: 'luukku' },
 ];
 const daysToChristmas = (day: string): SingleCard => [
@@ -253,10 +254,10 @@ export const oldJokes: CardsOfDayType = {
 export const getDays = (): string[] => Object.keys(allJokes ?? {});
 export const createJoke = (day: string): SingleCard[] => [
   calendarIntro(day),
-  ...allJokes[day],
+  ...allJokes[getDay(day)],
   daysToChristmas(day),
 ];
 export const createOldJoke = (day: string): SingleCard[] => [
-  ...oldJokes[day],
+  ...oldJokes[getDay(day)],
   merryChristmas(),
 ];

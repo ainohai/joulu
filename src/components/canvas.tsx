@@ -39,7 +39,7 @@ function Snow(props) {
 
 export default function WinterCanvas() {
   return (
-    <Canvas camera={{ position: [0, 0, 1] }}>
+    <Canvas camera={{ position: new THREE.Vector3(0, 0, 1) }}>
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
