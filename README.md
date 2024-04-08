@@ -1,5 +1,7 @@
 # joulu
 
+Advent calendar with jokes: https://github.com/ainohai/joulu
+
 ## Setting up development environment
 
 - Install yarn (https://classic.yarnpkg.com)
